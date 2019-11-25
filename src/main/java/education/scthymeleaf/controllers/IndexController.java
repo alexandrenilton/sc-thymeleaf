@@ -16,12 +16,12 @@ public class IndexController {
         this.productService = productService;
     }
 
-    @RequestMapping("/")
+    @RequestMapping({"/", "index"})
     public String getIndex(Model model){
 
         model.addAttribute("products", productService.listProducts());
 
-        return "index" ; // not need ".html"
+        return "index";
     }
 
 }
